@@ -8,20 +8,9 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.util.Optional;
 
-/**
- * Tour Package Repository Interface
- *
- * Created by Mary Ellen Bowman
- */
 @RepositoryRestResource(collectionResourceRel = "packages", path = "packages")
 public interface TourPackageRepository extends CrudRepository<TourPackage, String> {
 
-    /**
-     * Lookup a tour package by the name.
-     *
-     * @param name name of the tour.
-     * @return TourPackage if found, null otherwise.
-     */
     Optional<TourPackage> findByName(@Param("name") String name);
 
     //Not exposed by Spring Data REST
